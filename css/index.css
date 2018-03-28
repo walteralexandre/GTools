@@ -1,0 +1,6 @@
+body{background:#fffff0 url(../res/img/bg.png);}
+h1{color:#643d00; text-shadow:1px 1px 0px #333; text-align:center; margin:0px;}
+h3,p{color:#643d00;  text-align:center;}
+a{color:#643d00; text-decoration:none;}
+a:hover{text-decoration:underline;}
+img {width:128px;}
