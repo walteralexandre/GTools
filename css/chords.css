@@ -1,7 +1,7 @@
 body{background:#fffff0 url(../res/img/bg.png);}
 
 td,th{width:50px; height:30px; font-weight:bold; font-family:arial}
-table{background: url('../res/img/fingerboard.png'),url('../res/img/ebony.jpg') no-repeat; border-radius:5px; background-size:100% 100%;}
+table{background: url('../img/fingerboard.png'),url('../img/ebony.jpg') no-repeat; border-radius:5px; background-size:100% 100%;}
 td,th{border: 0px; text-align:left;}
 th{color:#666666;}
 
