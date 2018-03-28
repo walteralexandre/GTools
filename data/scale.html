@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UTools Scale Notes</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+	<link rel="stylesheet" type="text/css" href="../css/scale.css" />
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+	<div align="center"><h1>Ukulele Scale Notes</h1></div>
+	<form>
+		<div align="center">
+			<select id="tonica" onchange="ScaleSetFingerboard()">
+				<option value="C" selected="selected">C</option>
+				<option value="C#/Db">C#/Db</option>
+				<option value="D">D</option>
+				<option value="D#/Eb">D#/Eb</option>
+				<option value="E">E</option>
+				<option value="F">F</option>
+				<option value="F#/Gb">F#/Gb</option>
+				<option value="G">G</option>
+				<option value="G#/Ab">G#/Ab</option>
+				<option value="A">A</option>
+				<option value="A#/Bb">A#/Bb</option>
+				<option value="B">B</option>
+			</select>
+			<select id="scale" onchange="ScaleSetFingerboard()">
+				<option value="">---</option>
+				<option value="024579b" selected="selected">Major</option>
+				<option value="023578a">Natural Minor</option>
+				<option value="024579b">Ionian (1st mode of major)</option>
+				<option value="023579a">Dorian (2nd mode of major)</option>
+				<option value="013578a">Phrygian (3rd mode of major)</option>
+				<option value="024679b">Lydian (4th mode of major)</option>
+				<option value="024579a">Mixolydian (5th mode of major)</option>
+				<option value="023578a">Aeolian (6th mode of major)</option>
+				<option value="013568a">Locrian (7th mode of major)</option>
+				<option value="023578b">Harmonic Minor (1st mode of harmonic minor)</option>
+				<option value="023579b">Melodic Minor (1st mode of melodic minor)</option>
+				<option value="013468a">Altered Dominant (7th mode of melodic minor)</option>
+				<option value="013468a">Super Locrian (7th mode of melodic minor)</option>
+				<option value="013468a">Diminished Whole-tone (7th of melodic minor)</option>
+				<option value="013468a">Altered Scale (7th mode of melodic minor)</option>
+				<option value="0357a">Blues Pentatonic</option>
+                <option value="03567a">Blues Pentatonic (with blue note)</option>
+				<option value="03567ab">Blues (add M7)</option>
+				<option value="02479">Major Pentatonic (1st mode of major pentatonic)</option>
+				<option value="0257a">Suspended Pentatonic (2nd mode of major pentatonic)</option>
+				<option value="0257a">Dorian Pentatonic (2nd mode of major pentatonic)</option>
+				<option value="0358a">Phrygian Pentatonic (3rd mode of major pentatonic)</option>
+				<option value="02579">Mixolydian Pentatonic (4th mode of major pentatonic)</option>
+				<option value="0357a">Aeolian Pentatonic (5th mode of major pentatonic)</option>
+				<option value="0357a">Minor Pentatonic (5th mode of major pentatonic)</option>
+				<option value="0245789b">Major Bebop</option>
+				<option value="0234579a">Minor Bebop</option>
+				<option value="024579ab">Dominant Bebop</option>
+				<option value="0234579a">Dorian Bebop</option>
+				<option value="02468a">Whole-tone</option>
+				<option value="0235689b">Whole-half Tone Scale</option>
+				<option value="0134679a">Half-whole Tone Scale</option>
+				<option value="0235689b">Diminished</option>
+				<option value="0134679a">Dominant Diminished</option>
+				<option value="0134679a">Symetrical Diminished</option>
+				<option value="013578a">Spanish Mode</option>
+				<option value="0123456789ab">Chromatic</option>
+				<option value="0123456789ab">Chromatic (harmonic)</option>
+				<option value="024679a">Acoustic Scale</option>
+				<option value="024679a">Bartok</option>
+                <option value="024579">Some Rock/Blues Major Hexaphonic</option>
+                <option value="0234579">Some Rock/Blues Major Hexaphonic (blue note)</option>
+                <option value="03578a">Some Rock/Blues Minor Hexaphonic</option>                
+                <option value="035678a">Some Rock/Blues Minor Hexaphonic (blue note)</option>
+			</select>
+			
+			<input type="radio" name="sustenidoBemol" id="sustenidoBemol" checked="checked" value="s" onclick="ScaleChangeLabels('s')"/><span style="font-size:x-large; font-weight:bold;">#</span>
+			<input type="radio" name="sustenidoBemol" id="sustemidoBemol" value="b" onclick="ScaleChangeLabels('b')" /><span style="font-size:x-large; font-weight:bold;">b</span>
+			
+			<br/>
+			<label class="ckb0" id="lbl_c"><input type="checkbox" class="ckb0" id="ckb_c" value="0" onclick="ScaleSetFingerboard2()" />C</label>
+			<label class="ckb1" id="lbl_cs"><input type="checkbox" class="ckb1" id="ckb_cs" value="1" onclick="ScaleSetFingerboard2()" />C#/Db</label>
+			<label class="ckb2" id="lbl_d"><input type="checkbox" class="ckb2" id="ckb_d" value="2" onclick="ScaleSetFingerboard2()" />D</label>
+			<label class="ckb3" id="lbl_ds"><input type="checkbox" class="ckb3" id="ckb_ds" value="3" onclick="ScaleSetFingerboard2()" />D#/Eb</label>
+			<label class="ckb4" id="lbl_e"><input type="checkbox" class="ckb4" id="ckb_e" value="4" onclick="ScaleSetFingerboard2()" />E</label>
+			<label class="ckb5" id="lbl_f"><input type="checkbox" class="ckb5" id="ckb_f" value="5" onclick="ScaleSetFingerboard2()" />F</label>
+			<label class="ckb6" id="lbl_fs"><input type="checkbox" class="ckb6" id="ckb_fs" value="6" onclick="ScaleSetFingerboard2()" />F#/Gb</label>
+			<label class="ckb7" id="lbl_g"><input type="checkbox" class="ckb7" id="ckb_g" value="7" onclick="ScaleSetFingerboard2()" />G</label>
+			<label class="ckb8" id="lbl_gs"><input type="checkbox" class="ckb8" id="ckb_gs" value="8" onclick="ScaleSetFingerboard2()" />G#/Ab</label>
+			<label class="ckb9" id="lbl_a"><input type="checkbox" class="ckb9" id="ckb_a" value="9" onclick="ScaleSetFingerboard2()" />A</label>
+			<label class="ckb10" id="lbl_as"><input type="checkbox" class="ckb10" id="ckb_as" value="10" onclick="ScaleSetFingerboard2()" />A#/Bb</label>
+			<label class="ckb11" id="lbl_b"><input type="checkbox" class="ckb11" id="ckb_b" value="11" onclick="ScaleSetFingerboard2()" />B</label>
+		</div>
+		<br />
+		<table cellspacing="1" colspan="1" border="0" align="center">
+			<tr>
+				<td name="a">A</td>
+				<td name="as">A#</td>
+				<td name="b">B</td>
+				<td name="c">C</td>
+				<td name="cs">C#</td>
+				<td name="d">D</td>
+				<td name="ds">D#</td>
+				<td name="e">E</td>
+				<td name="f">F</td>
+				<td name="fs">F#</td>
+				<td name="g">G</td>
+				<td name="gs">G#</td>
+				<td name="a">A</td>
+				<td name="as">A#</td>
+				<td name="b">B</td>
+				<td name="c">C</td>
+			</tr>
+			<tr>
+				<td name="e">E</td>
+				<td name="f">F</td>
+				<td name="fs">F#</td>
+				<td name="g">G</td>
+				<td name="gs">G#</td>
+				<td name="a">A</td>
+				<td name="as">A#</td>
+				<td name="b">B</td>
+				<td name="c">C</td>
+				<td name="cs">C#</td>
+				<td name="d">D</td>
+				<td name="ds">D#</td>
+				<td name="e">E</td>
+				<td name="f">F</td>
+				<td name="fs">F#</td>
+				<td name="g">G</td>
+			</tr>
+			<tr>
+				<td name="c">C</td>
+				<td name="cs">C#</td>
+				<td name="d">D</td>
+				<td name="ds">D#</td>
+				<td name="e">E</td>
+				<td name="f">F</td>
+				<td name="fs">F#</td>
+				<td name="g">G</td>
+				<td name="gs">G#</td>
+				<td name="a">A</td>
+				<td name="as">A#</td>
+				<td name="b">B</td>
+				<td name="c">C</td>
+				<td name="cs">C#</td>
+				<td name="d">D</td>
+				<td name="ds">D#</td>
+			</tr>
+			<tr>
+				<td name="g">G</td>
+				<td name="gs">G#</td>
+				<td name="a">A</td>
+				<td name="as">A#</td>
+				<td name="b">B</td>
+				<td name="c">C</td>
+				<td name="cs">C#</td>
+				<td name="d">D</td>
+				<td name="ds">D#</td>
+				<td name="e">E</td>
+				<td name="f">F</td>
+				<td name="fs">F#</td>
+				<td name="g">G</td>
+				<td name="gs">G#</td>
+				<td name="a">A</td>
+				<td name="as">A#</td>
+			</tr>
+		</table>
+		<table border="0" align="center" cellpadding="1" cellspacing="1" style="background:none;">
+		    <tr>
+		        <th valign="top">0</th>
+		        <th valign="top">&nbsp;</th>
+		        <th valign="top">&nbsp;</th>
+		        <th valign="top">3</th>
+		        <th valign="top">&nbsp;</th>
+		        <th valign="top">5</th>
+		        <th valign="top">&nbsp;</th>
+		        <th valign="top">7</th>
+		        <th valign="top">&nbsp;</th>
+		        <th valign="top">9</th>
+		        <th valign="top">&nbsp;</th>
+		        <th valign="top">&nbsp;</th>
+		        <th valign="top">12</th>
+		        <th valign="top">&nbsp;</th>
+		        <th valign="top">&nbsp;</th>
+		        <th valign="top">15</th>
+	        </tr>
+	    </table>
+	</form>
+	<script type="text/javascript">
+	<!--
+		ScaleSetFingerboard();
+	-->
+	</script>
+	<!-- <div align="left"><h3><a href="../index.html">Home</a></h3></div> -->
+</body>
+
+</html>
