@@ -3,13 +3,13 @@ CACHE MANIFEST
 css/chords.css
 css/index.css
 css/scale.css
-data/chords.html
-data/scale.html
 img/apple-touch-icon-76x76.png
 img/bg.png
 img/ebony.jpg
 img/fingerboard.png
 img/image.png
 js/script.js
+chords.html
 index.html
+scale.html
 utools.manifest
